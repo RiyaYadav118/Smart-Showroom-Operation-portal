@@ -1,0 +1,194 @@
+/* ===== BODY ===== */
+body {
+    margin: 0;
+    font-family: Arial;
+    background: #f4f4f4;
+}
+
+/* ===== NAVBAR ===== */
+.navbar {
+    background: #eee;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar h2 {
+    color: blue;
+}
+
+.menu a {
+    margin: 10px;
+    text-decoration: none;
+    color: black;
+}
+
+.menu button {
+    padding: 6px 10px;
+    cursor: pointer;
+}
+
+/* ===== HERO SECTION ===== */
+.hero {
+    position: relative;
+}
+
+/* IMAGE */
+.car-img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+}
+
+/* TEXT BOX */
+.text-box {
+    position: absolute;
+    top: 40%;
+    left: 35%;
+    background: rgba(0,0,0,0.6);
+    color: white;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+/* ARROWS */
+.left {
+    position: absolute;
+    top: 45%;
+    left: 10px;
+    background: rgba(0,0,0,0.5);
+    color: white;
+    border: none;
+    font-size: 20px;
+}
+
+.right {
+    position: absolute;
+    top: 45%;
+    right: 10px;
+    background: rgba(0,0,0,0.5);
+    color: white;
+    border: none;
+    font-size: 20px;
+}
+
+/* ===== LOGIN BOX ===== */
+#loginBox {
+    display: none;
+    text-align: center;
+    background: white;
+    padding: 20px;
+    width: 250px;
+    margin: 20px auto;
+    border-radius: 10px;
+    box-shadow: 0 0 10px gray;
+}
+
+/* ===== ADMIN PANEL ===== */
+#adminPanel {
+    display: none;
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* FORM */
+form {
+    background: white;
+    padding: 15px;
+    width: 300px;
+    margin: auto;
+    border-radius: 10px;
+    box-shadow: 0 0 10px gray;
+}
+
+input, textarea {
+    width: 90%;
+    margin: 8px;
+    padding: 8px;
+}
+
+/* ===== CAR GRID ===== */
+#carList {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 cards per row */
+    gap: 20px;
+    padding: 20px;
+}
+
+/* CARD DESIGN */
+.card {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px gray;
+    text-align: center;
+}
+
+/* CARD IMAGE */
+.card img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+/* ===== RESPONSIVE (Mobile) ===== */
+@media (max-width: 768px) {
+    #carList {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    #carList {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* ===== About Us Section ===== */
+#about {
+    padding: 60px 20px;
+    background-color: #f7f9fc;
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+
+#about h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: #1f2937;
+}
+
+#about .about-desc {
+    max-width: 700px;
+    margin: 0 auto 20px auto;
+    font-size: 16px;
+    color: #4b5563;
+    line-height: 1.6;
+}
+
+#about .about-features {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+#about .feature {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #10b981;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+#about .feature span {
+    font-size: 20px;
+}
+
+body { font-family: Arial, sans-serif; padding: 20px; background: #f9f9f9; }
+h1 { text-align: center; margin-bottom: 20px; }
+

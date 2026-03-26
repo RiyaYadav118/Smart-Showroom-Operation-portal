@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MotoHub</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<div class="navbar">
+    <h2>🚗 MotoHub</h2>
+    <div class="menu">
+        <a href="index.html">Home</a>
+        <a href="products.html">Products</a>
+        <a href="AboutUs.html">About</a>
+        <button onclick="showLogin()">Login</button>
+    </div>
+</div>
+
+<!-- HERO SECTION / SLIDER -->
+<div class="hero">
+    <img src="images/poonam1.jpeg" class="car-img" id="slider">
+    <div class="text-box">
+        <h1 id="title">Welcome to MotoHub</h1>
+        <p id="subtitle">Your Premium Car Destination</p>
+    </div>
+    <button class="left" onclick="prevSlide()">❮</button>
+    <button class="right" onclick="nextSlide()">❯</button>
+</div>
+
+<!-- LOGIN POPUP -->
+<div id="loginBox" style="display:none;">
+    <h3>Login</h3>
+    <input type="text" id="username" placeholder="Username"><br>
+    <input type="password" id="password" placeholder="Password"><br>
+    <button onclick="login()">Submit</button>
+</div>
+
+<!-- ADMIN PANEL -->
+<div id="adminPanel" style="display:none;">
+    <h2>Admin Panel</h2>
+    <form id="carForm">
+        <input type="text" id="name" placeholder="Car Name" required><br>
+        <i
+        input type="text" id="price" placeholder="Price" required><br>
+        <textarea id="desc" placeholder="Description" required></textarea><br>
+        <input type="file" id="image"><br>
+        <button type="submit">Add Car</button>
+    </form>
+
+    
+</div>
+
+
+
+<!-- PRODUCTS LIST -->
+<!-- <h1 style="text-align:center;">Our Premium Collection</h1>
+<div id="carList"></div> -->
+
+<script src="function.js"></script>
+</body>
+</html>
