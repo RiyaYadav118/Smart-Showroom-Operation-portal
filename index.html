@@ -1,62 +1,114 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>MotoHub</title>
-    <link rel="stylesheet" href="style.css">
+    <title>MotoHub - Login/Signup</title>
+    <link rel="stylesheet" href="login.css">
+    <style>
+        body { font-family: Arial; text-align:center; padding:50px;}
+        input, button { padding:10px; margin:5px; width:200px; }
+        .formBox { margin-top:20px; border:1px solid #ccc; padding:20px; display:inline-block; }
+    </style>
 </head>
 <body>
 
-<!-- NAVBAR -->
-<div class="navbar">
-    <h2>🚗 MotoHub</h2>
-    <div class="menu">
-        <a href="index.html">Home</a>
-        <a href="products.html">Products</a>
-        <a href="AboutUs.html">About</a>
-        <button onclick="showLogin()">Login</button>
-    </div>
-</div>
+<h1>Welcome to MotoHub</h1>
 
-<!-- HERO SECTION / SLIDER -->
-<div class="hero">
-    <img src="images/poonam1.jpeg" class="car-img" id="slider">
-    <div class="text-box">
-        <h1 id="title">Welcome to MotoHub</h1>
-        <p id="subtitle">Your Premium Car Destination</p>
-    </div>
-    <button class="left" onclick="prevSlide()">❮</button>
-    <button class="right" onclick="nextSlide()">❯</button>
+<!-- SIGNUP POPUP -->
+<div id="signupBox" class="formBox">
+    <h3>Signup</h3>
+    <input type="text" id="signupUsername" placeholder="Username"><br>
+    <input type="email" id="signupEmail" placeholder="Email"><br>
+    <input type="password" id="signupPassword" placeholder="Password"><br>
+    <input type="password" id="signupConfirm" placeholder="Confirm Password"><br>
+    <button onclick="signup()">Signup</button>
 </div>
 
 <!-- LOGIN POPUP -->
-<div id="loginBox" style="display:none;">
+<div id="loginBox" class="formBox" style="display:none;">
     <h3>Login</h3>
-    <input type="text" id="username" placeholder="Username"><br>
-    <input type="password" id="password" placeholder="Password"><br>
+    <input type="text" id="loginUsername" placeholder="Username"><br>
+    <input type="password" id="loginPassword" placeholder="Password"><br>
     <button onclick="login()">Submit</button>
 </div>
 
-<!-- ADMIN PANEL -->
-<div id="adminPanel" style="display:none;">
-    <h2>Admin Panel</h2>
-    <form id="carForm">
-        <input type="text" id="name" placeholder="Car Name" required><br>
-        <i
-        input type="text" id="price" placeholder="Price" required><br>
-        <textarea id="desc" placeholder="Description" required></textarea><br>
-        <input type="file" id="image"><br>
-        <button type="submit">Add Car</button>
-    </form>
-
-    
+<div style="margin-top:20px;">
+    <button onclick="showLogin()">Already have account? Login</button>
+    <button onclick="showSignup()">New user? Signup</button>
 </div>
 
+<script>
+// Show login/signup forms
+function showLogin() {
+    document.getElementById('loginBox').style.display = 'block';
+    document.getElementById('signupBox').style.display = 'none';
+}
 
+function showSignup() {
+    document.getElementById('signupBox').style.display = 'block';
+    document.getElementById('loginBox').style.display = 'none';
+}
 
-<!-- PRODUCTS LIST -->
-<!-- <h1 style="text-align:center;">Our Premium Collection</h1>
-<div id="carList"></div> -->
+// Signup function
+function signup() {
+    let username = document.getElementById('signupUsername').value.trim();
+    let email = document.getElementById('signupEmail').value.trim();
+    let password = document.getElementById('signupPassword').value.trim();
+    let confirm = document.getElementById('signupConfirm').value.trim();
 
-<script src="function.js"></script>
+    if(!username || !email || !password || !confirm){
+        alert('All fields are required');
+        return;
+    }
+    if(password !== confirm){
+        alert('Passwords do not match');
+        return;
+    }
+
+    let users = JSON.parse(localStorage.getItem('users') || '[]');
+
+    // Check if username/email already exists
+    if(users.some(u => u.username === username)){
+        alert('Username already taken');
+        return;
+    }
+    if(users.some(u => u.email === email)){
+        alert('Email already registered');
+        return;
+    }
+
+    // Save new user
+    let newUser = {username, email, password};
+    users.push(newUser);
+    localStorage.setItem('users', JSON.stringify(users));
+
+    // Set currentUser and redirect to home.html
+    localStorage.setItem('currentUser', JSON.stringify(newUser));
+    window.location.href = 'home.html';
+}
+
+// Login function
+function login() {
+    let username = document.getElementById('loginUsername').value.trim();
+    let password = document.getElementById('loginPassword').value.trim();
+    let users = JSON.parse(localStorage.getItem('users') || '[]');
+
+    // Admin login
+    if(username === 'admin' && password === '123'){
+        localStorage.setItem('currentUser', JSON.stringify({username:'admin', role:'admin'}));
+        window.location.href = 'products.html'; // admin redirected to products page
+        return;
+    }
+
+    // Normal user login
+    let user = users.find(u => u.username === username && u.password === password);
+    if(user){
+        localStorage.setItem('currentUser', JSON.stringify(user));
+        window.location.href = 'home.html'; // normal user redirected to home page
+    } else {
+        alert('Invalid username or password');
+    }
+}
+</script>
+
 </body>
 </html>

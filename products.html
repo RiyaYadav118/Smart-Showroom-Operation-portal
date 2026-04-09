@@ -10,23 +10,14 @@
 <div class="navbar">
     <h2>🚗 MotoHub</h2>
     <div class="menu">
-        <a href="index.html">Home</a>
+        <a href="home.html">Home</a>
         <a href="products.html">Products</a>
         <a href="AboutUs.html">About</a>
         <button onclick="showLogin()">Login</button>
     </div>
 </div>
 
-<!-- HERO SECTION / SLIDER -->
-<!-- <div class="hero">
-    <img src="images/poonam1.jpeg" class="car-img" id="slider">
-    <div class="text-box">
-        <h1 id="title">Welcome to MotoHub</h1>
-        <p id="subtitle">Your Premium Car Destination</p>
-    </div>
-    <button class="left" onclick="prevSlide()">❮</button>
-    <button class="right" onclick="nextSlide()">❯</button>
-</div> -->
+
 
 <!-- LOGIN POPUP -->
 <div id="loginBox" style="display:none;">
@@ -38,13 +29,22 @@
 
 <!-- ADMIN PANEL -->
 <div id="adminPanel" style="display:none;">
+
     <h2>Admin Panel</h2>
     <form id="carForm">
+        
         <input type="text" id="name" placeholder="Car Name" required><br>
+        
         <input type="text" id="price" placeholder="Price" required><br>
+        
         <textarea id="desc" placeholder="Description" required></textarea><br>
+        
+        <input type="number" id="stock" placeholder="Stock Available" required><br>
+        
         <input type="file" id="image"><br>
+        
         <button type="submit">Add Car</button>
+        
     </form>
 </div>
 
@@ -53,5 +53,7 @@
 <div id="carList"></div>
 
 <script src="function.js"></script>
+
+
 </body>
 </html>

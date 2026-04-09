@@ -192,3 +192,151 @@ input, textarea {
 body { font-family: Arial, sans-serif; padding: 20px; background: #f9f9f9; }
 h1 { text-align: center; margin-bottom: 20px; }
 
+/* for dashboard */
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f6f8;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+header h1 {
+    font-size: 2rem;
+    color: #333;
+}
+
+main {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.dashboard-card {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    flex: 1 1 250px;
+    text-align: center;
+    transition: transform 0.2s ease;
+}
+
+.dashboard-card:hover {
+    transform: translateY(-5px);
+}
+
+.dashboard-card h2 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: #555;
+}
+
+.dashboard-card p {
+    font-size: 2rem;
+    color: #1a73e8;
+    font-weight: bold;
+}
+
+/* Background */
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    margin: 0;
+    padding: 0;
+}
+
+/* Container */
+.emi-container {
+    width: 350px;
+    margin: 60px auto;
+    padding: 25px;
+    background: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    text-align: center;
+    animation: fadeIn 0.6s ease-in-out;
+}
+
+/* Heading */
+.emi-container h2 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Inputs & Dropdown */
+.emi-container input,
+.emi-container select {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+/* Focus Effect */
+.emi-container input:focus,
+.emi-container select:focus {
+    border-color: #667eea;
+    box-shadow: 0 0 5px rgba(102,126,234,0.5);
+    outline: none;
+}
+
+/* Button */
+.emi-container button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 12px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+/* Button Hover */
+.emi-container button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* Result Box */
+#result {
+    margin-top: 15px;
+    padding: 12px;
+    background: #f1f5ff;
+    border-left: 5px solid #667eea;
+    border-radius: 8px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* for login/signup */
+
